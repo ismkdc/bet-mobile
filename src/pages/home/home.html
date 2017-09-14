@@ -6,9 +6,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding="">
+  <div class="row header">
+    <div class="col">Code</div>
+    <div class="col">Match</div>
+    <div class="col">Type</div>
+    <div class="col">Guess</div>
+    <div class="col">Rate</div>
+  </div>
+  <div class="row" *ngFor="let bet of bets">
+    <div class="col">{{bet.code}}</div>
+    <div class="col">{{bet.match}}</div>
+    <div class="col">{{bet.type}}</div>
+    <div class="col">{{bet.guess}}</div>
+    <div class="col">{{bet.rate}}</div>
+  </div>
 </ion-content>
+
