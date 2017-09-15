@@ -1,21 +1,13 @@
-body {
-    cursor: url('http://ionicframework.com/img/finger.png'), auto;
-}
-
-.header .col {
-    background-color:lightgrey;
-}
-
-.col {
-    border: solid 1px grey;
-    border-bottom-style: none;
-    border-right-style: none;
-}
-
-.col:last-child {
-    border-right: solid 1px grey;
-}
-
-.row:last-child .col {
-    border-bottom: solid 1px grey;
+page-home {
+    .content-md {
+        background-color: #ec9627;
+    }
+    .card-md {
+        -webkit-box-shadow: -1px 1px 37px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 1px 37px -4px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 1px 37px -4px rgba(0, 0, 0, 0.75);
+    }
+    .label-md {
+        margin: 13px 8px 1px 0;
+    }
 }

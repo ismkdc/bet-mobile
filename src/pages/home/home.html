@@ -1,25 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar color="dark">
+        <ion-title>
+            Banko İddaa Tahminleri
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding="">
-  <div class="row header">
-    <div class="col">Code</div>
-    <div class="col">Match</div>
-    <div class="col">Type</div>
-    <div class="col">Guess</div>
-    <div class="col">Rate</div>
-  </div>
-  <div class="row" *ngFor="let bet of bets">
-    <div class="col">{{bet.code}}</div>
-    <div class="col">{{bet.match}}</div>
-    <div class="col">{{bet.type}}</div>
-    <div class="col">{{bet.guess}}</div>
-    <div class="col">{{bet.rate}}</div>
-  </div>
+<ion-content no-padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionClear)="onCancel($event)" placeholder="Maçlarda ara"></ion-searchbar>
+    <ion-card *ngFor="let bet of bets">
+        <ion-item>
+            <h3>{{bet.match}}</h3>
+            <button item-right ion-button round color="orang" item-right><ion-icon name="md-checkmark"></ion-icon></button>
+            <hr>
+        </ion-item>
+        <ion-item>
+            <h3 style="color: #ec9627" item-left>{{bet.code}}</h3>
+            <h2 style="margin-left: 40%; font-weight: bold" item-center>{{bet.type}} {{bet.guess}}</h2>
+            <h2 item-right style="font-weight: bold;">{{bet.rate}}</h2>
+        </ion-item>
+    </ion-card>
 </ion-content>
-
